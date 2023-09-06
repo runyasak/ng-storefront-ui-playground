@@ -1,0 +1,58 @@
+<div class="border-t p-4">
+  <div class="flex flex-col items-center justify-center gap-4 p-4">
+    <p class="typography-headline-3">Customize them</p>
+    <div class="flex gap-10">
+      <!-- <CTA>
+        <template #first>
+          <SfButton
+            type="button"
+            size="lg"
+            variant="secondary"
+            :disabled="loading"
+            @click="handleClick"
+            class="rounded-none !text-gray-800 ring-red-400 hover:bg-red-100 hover:!text-gray-600 hover:ring-red-400 active:bg-red-600 active:!text-gray-50 active:ring-red-400 disabled:!bg-gray-100 disabled:!ring-gray-600"
+          >
+            <template #prefix>
+              <SfLoaderCircular size="sm" v-if="loading" />
+              <SfIconDelete v-else />
+            </template>
+            {{ loading ? 'Clearing ...' : 'Clear Cart' }}
+          </SfButton>
+        </template>
+        <template #second>
+          <SfButton
+            type="button"
+            size="lg"
+            class="rounded-none !bg-blue-500 text-white ring-0 hover:!bg-blue-700 hover:text-white active:!bg-blue-600 active:!text-gray-50"
+          >
+            <template #suffix>
+              <SfIconArrowForward />
+            </template>
+            Checkout
+          </SfButton>
+        </template>
+      </CTA> -->
+    </div>
+  </div>
+  <div
+    class="m-auto w-full divide-y rounded-md border border-neutral-200 text-neutral-900 md:w-3/4"
+  >
+    <sf-accordion-item [(ngModel)]="isOpen">
+      <div
+        summary
+        class="flex justify-between rounded-t !bg-green-500 p-4 font-medium !text-white hover:!bg-green-600 hover:!text-white"
+      >
+        <p>{{ accordionItem.summary }}</p>
+        <sf-icon-chevron-left
+          [ngClass]="['text-neutral-500', isOpen ? 'rotate-90' : '-rotate-90']"
+        />
+      </div>
+      <div class="flex flex-col gap-4 bg-green-50 px-4 py-2">
+        {{ accordionItem.details }}
+        <a sf-link href="#" variant="primary" class="!text-blue-500">
+          Click for more information
+        </a>
+      </div>
+    </sf-accordion-item>
+  </div>
+</div>
