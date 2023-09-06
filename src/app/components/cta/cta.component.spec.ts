@@ -8,7 +8,7 @@ describe('CtaComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [CtaComponent]
+      imports: [CtaComponent],
     });
     fixture = TestBed.createComponent(CtaComponent);
     component = fixture.componentInstance;

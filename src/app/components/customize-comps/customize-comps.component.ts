@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   SfButtonComponent,
@@ -6,6 +6,8 @@ import {
   SfAccordionItemComponent,
   SfIconChevronLeftComponent,
   SfLinkComponent,
+  SfLoaderCircularComponent,
+  SfIconArrowForwardComponent,
 } from 'ng-storefront-ui';
 import { CtaComponent } from '../cta/cta.component';
 
@@ -20,22 +22,14 @@ import { CtaComponent } from '../cta/cta.component';
     SfAccordionItemComponent,
     SfIconChevronLeftComponent,
     SfLinkComponent,
-    // [Todo]: implement later
-    // SfLoaderCircularComponent,
-    // SfIconArrowForwardComponent,
+    SfLoaderCircularComponent,
+    SfIconArrowForwardComponent,
   ],
   templateUrl: './customize-comps.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CustomizeCompsComponent {
-  // [Todo]: implement later
-  // const loading = ref<boolean>(false);
-  // const handleClick = () => {
-  //   loading.value = true;
-  //   setTimeout(() => {
-  //     loading.value = false;
-  //   }, 5000);
-  // };
+  loading = signal(false);
 
   isOpen = false;
 
@@ -45,4 +39,12 @@ export class CustomizeCompsComponent {
     details:
       'We will inform you about the expected delivery time of your order in checkout and in your order confirmation email.',
   };
+
+  handleClick() {
+    this.loading.update((value) => !value);
+
+    setTimeout(() => {
+      this.loading.update((value) => !value);
+    }, 5000);
+  }
 }
