@@ -8,6 +8,10 @@ module.exports = {
   content: ['./src/**/*.{html,ts}', './node_modules/ng-storefront-ui/**/*.{js,mjs}'],
   theme: {
     extend: {},
+    fontFamily: {
+      sans: ['Inter', 'system-ui'],
+      heading: ['Arial', 'Georgia'],
+    },
   },
   plugins: [sfTypography],
 };
