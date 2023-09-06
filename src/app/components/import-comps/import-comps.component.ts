@@ -1,11 +1,22 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SfAccordionItemComponent, SfIconChevronLeftComponent } from 'ng-storefront-ui';
+import {
+  SfAccordionItemComponent,
+  SfButtonComponent,
+  SfIconChevronLeftComponent,
+} from 'ng-storefront-ui';
+import { CtaComponent } from '../cta/cta.component';
 
 @Component({
   selector: 'import-comps',
   standalone: true,
-  imports: [CommonModule, SfAccordionItemComponent, SfIconChevronLeftComponent],
+  imports: [
+    CommonModule,
+    CtaComponent,
+    SfAccordionItemComponent,
+    SfButtonComponent,
+    SfIconChevronLeftComponent,
+  ],
   templateUrl: './import-comps.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

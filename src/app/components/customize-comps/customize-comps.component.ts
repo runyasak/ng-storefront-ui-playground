@@ -7,12 +7,14 @@ import {
   SfIconChevronLeftComponent,
   SfLinkComponent,
 } from 'ng-storefront-ui';
+import { CtaComponent } from '../cta/cta.component';
 
 @Component({
   selector: 'customize-comps',
   standalone: true,
   imports: [
     CommonModule,
+    CtaComponent,
     SfButtonComponent,
     SfIconDeleteComponent,
     SfAccordionItemComponent,
@@ -36,7 +38,6 @@ export class CustomizeCompsComponent {
   // };
 
   isOpen = false;
-  // opened: string | null = null;
 
   accordionItem = {
     id: 'acc-1',
@@ -44,16 +45,4 @@ export class CustomizeCompsComponent {
     details:
       'We will inform you about the expected delivery time of your order in checkout and in your order confirmation email.',
   };
-
-  // toggle(id: string, open: boolean) {
-  //   if (open) {
-  //     this.opened = id;
-  //   } else if (this.isOpen(id)) {
-  //     this.opened = null;
-  //   }
-  // }
-
-  // isOpen(id: string) {
-  //   return id === this.opened;
-  // }
 }
