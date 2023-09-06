@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { SfButtonComponent } from 'ng-storefront-ui';
 import { ImportCompsComponent } from './components/import-comps/import-comps.component';
 import { CustomizeCompsComponent } from './components/customize-comps/customize-comps.component';
+import { CopyPasteBlocksComponent } from './components/copy-paste-blocks/copy-paste-blocks.component';
 
 @Component({
   selector: 'app-root',
@@ -14,10 +15,9 @@ import { CustomizeCompsComponent } from './components/customize-comps/customize-
     SfButtonComponent,
     ImportCompsComponent,
     CustomizeCompsComponent,
+    CopyPasteBlocksComponent,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-  title = 'ng-storefront-ui-playground';
-}
+export class AppComponent {}
